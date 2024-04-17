@@ -48,7 +48,6 @@ const Carousel = () => {
           effect={"flip"}
           loop={true}
           grabCursor={true}
-          //   pagination={true}
           navigation={true}
           modules={[EffectFlip, Pagination, Navigation]}
           className="mySwiper"
