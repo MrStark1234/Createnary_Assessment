@@ -1,0 +1,33 @@
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 800px;
+  height: 405px;
+  padding: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 800px;
+  height: 405px;
+}
+
+.swiper-slide img {
+  width: 800px;
+  height: 405px;
+  object-fit: contain;
+}
+.swiper-button-prev:after {
+  color: white;
+}
+.swiper-button-next:after {
+  color: white;
+}
