@@ -9,7 +9,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const Navbar = () => {
   return (
     <nav
-      className="text-black fixed w-[1024px] top-4 left-[208px] z-20  rounded-full  sm:w-[90%] sm:ml-[-38%]"
+      className="text-black fixed w-[1024px] top-4 left-[208px] z-20  rounded-full  sm:w-[90%] sm:ml-[-48%]"
       style={{
         backgroundColor: "rgb(214 214 214 / 43%)",
         padding: "20px 24px 20px 24px",

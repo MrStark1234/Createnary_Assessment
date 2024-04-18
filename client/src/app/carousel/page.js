@@ -75,7 +75,7 @@ const Carousel = () => {
           </SwiperSlide>
         </Swiper>
         <div className="flex justify-center items-center">
-          <Link href="/page2">
+          <Link href="/page2" className="sm:mb-[40px]">
             <button className="bg-[#f8f9fb] rounded-lg px-2 py-2 text-black mt-20">
               Try for free
             </button>

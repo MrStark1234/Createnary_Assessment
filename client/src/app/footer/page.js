@@ -10,7 +10,7 @@ const Footer = () => {
             CREATENARY
           </h1>
         </div>
-        <div className="two w-1/3 sm:ml-[-10%]">
+        <div className="two w-1/3 sm:ml-[-21%]">
           <ul className="ml-60 mt-10 text-nowrap">
             <li className="mt-3">Navigation</li>
             <li className="mt-3">About Createnary</li>
@@ -27,10 +27,10 @@ const Footer = () => {
             <CiLocationOn />
             <p className="font-thin ml-2">Delhi , India</p>
           </div>
-          <p className="font-thin ml-5">+91 98765 43210</p>
+          <p className="font-thin ml-5 sm:text-nowrap">+91 98765 43210</p>
           <div className="flex justify-center items-center gap-1">
             <FiPhone />
-            <p className="font-thin">+91 99999 99999</p>
+            <p className="font-thin sm:text-nowrap">+91 99999 99999</p>
           </div>
         </div>
       </div>

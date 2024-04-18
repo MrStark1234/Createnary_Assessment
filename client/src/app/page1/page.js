@@ -7,23 +7,20 @@ const Landing = () => {
     <div className="main">
       <Navbar />
       <img
-        className="h-full w-full absolute "
+        className="h-full w-full absolute  sm:h-[115%]"
         src="/assets/background.png"
         alt="img"
       />
       <div className="relative flex items-center justify-center">
-        <div
-          className="left w-1/2 text-black sm:mt-[44%] sm:ml-[1%] ml-[8%] mt-[5%]"
-          // style={{ marginLeft: "8%", marginTop: "5%" }}
-        >
+        <div className="left w-1/2 text-black sm:mt-[220px] sm:mb-[220px] sm:ml-[12%] ml-[8%] mt-[5%] sm:w-auto sm:text-center">
           <h1 style={{ fontSize: "xxx-large", fontWeight: "600" }}>
             Welcome To India’s First
           </h1>
           <h1
+            className="text-[#4A508E] sm:text-[#34396c]"
             style={{
               fontSize: "xxx-large",
               fontWeight: "600",
-              color: "#4A508E",
             }}
           >
             Creator’s Marketplace
@@ -56,7 +53,7 @@ const Landing = () => {
           <img
             src="/assets/hero.png"
             alt="img"
-            className="sm:absolute sm:w-[60%] sm:bottom-[-4%] sm:right-0"
+            className="sm:absolute sm:w-[60%] sm:bottom-[-4%] sm:right-[20%]"
           />
         </div>
       </div>
