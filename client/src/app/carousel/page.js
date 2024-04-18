@@ -22,7 +22,9 @@ const Carousel = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/data");
+      const response = await fetch(
+        "https://createnary-server.onrender.com/data"
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -54,52 +56,22 @@ const Carousel = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <Image
-              src="/assets/crsl.png"
-              layout="responsive"
-              width={500}
-              height={300}
-            />
+            <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/assets/crsl.png"
-              layout="responsive"
-              width={500}
-              height={300}
-            />
+            <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/assets/crsl.png"
-              layout="responsive"
-              width={500}
-              height={300}
-            />
+            <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/assets/crsl.png"
-              layout="responsive"
-              width={500}
-              height={300}
-            />
+            <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/assets/crsl.png"
-              layout="responsive"
-              width={500}
-              height={300}
-            />
+            <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/assets/crsl.png"
-              layout="responsive"
-              width={500}
-              height={300}
-            />
+            <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
         </Swiper>
         <div className="flex justify-center items-center">
