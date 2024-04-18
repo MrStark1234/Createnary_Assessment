@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const RightCont = ({ number }) => {
@@ -17,7 +18,13 @@ const RightCont = ({ number }) => {
         Flights to share
       </p>
       <div className="flex justify-center items-center">
-        <img src="/assets/image.png" className="mt-6 ml-[100px]" />
+        <Image
+          src="/assets/image.png"
+          className="mt-6 ml-[100px]"
+          layout="responsive"
+          width={100}
+          height={100}
+        />
       </div>
     </div>
   );

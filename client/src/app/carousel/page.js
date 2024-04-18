@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "./styles.css";
 
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
 
 const Carousel = () => {
   const [data, setData] = useState([]);
@@ -21,7 +22,7 @@ const Carousel = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://createnary-server.onrender.com");
+      const response = await fetch("http://localhost:8000/data");
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -53,22 +54,52 @@ const Carousel = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src="/assets/crsl.png" />
+            <Image
+              src="/assets/crsl.png"
+              layout="responsive"
+              width={500}
+              height={300}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/crsl.png" />
+            <Image
+              src="/assets/crsl.png"
+              layout="responsive"
+              width={500}
+              height={300}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/crsl.png" />
+            <Image
+              src="/assets/crsl.png"
+              layout="responsive"
+              width={500}
+              height={300}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/crsl.png" />
+            <Image
+              src="/assets/crsl.png"
+              layout="responsive"
+              width={500}
+              height={300}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/crsl.png" />
+            <Image
+              src="/assets/crsl.png"
+              layout="responsive"
+              width={500}
+              height={300}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/assets/crsl.png" />
+            <Image
+              src="/assets/crsl.png"
+              layout="responsive"
+              width={500}
+              height={300}
+            />
           </SwiperSlide>
         </Swiper>
         <div className="flex justify-center items-center">

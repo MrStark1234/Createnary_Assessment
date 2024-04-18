@@ -53,7 +53,7 @@ const Landing = () => {
           className="right w-1/2 "
           style={{ marginRight: "8%", marginTop: "7%" }}
         >
-          <img className="" src="/assets/hero.png" alt="img" />
+          <img src="/assets/hero.png" alt="img" />
         </div>
       </div>
     </div>
