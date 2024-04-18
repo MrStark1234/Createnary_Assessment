@@ -37,7 +37,7 @@ const Carousel = () => {
   };
   return (
     <div>
-      <div className="w-full h-[724px] bg-[#4A508E]">
+      <div className="w-full h-[724px] bg-[#4A508E] sm:h-auto">
         {data.map((item, index) => (
           <div key={index}>
             <h1 className="text-center py-8 font-semibold text-4xl">
@@ -53,7 +53,7 @@ const Carousel = () => {
           grabCursor={true}
           navigation={true}
           modules={[EffectFlip, Pagination, Navigation]}
-          className="mySwiper"
+          className="mySwiper sm:w-full w-[800px]"
         >
           <SwiperSlide>
             <Image src="/assets/crsl.png" width={500} height={300} />

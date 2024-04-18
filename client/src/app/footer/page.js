@@ -1,22 +1,16 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
+
 const Footer = () => {
   return (
-    <div
-      className="foot"
-      style={{
-        height: "385px",
-        background: "#4A508E",
-        color: "white",
-      }}
-    >
-      <div className="flex w-full justify-around">
+    <div className="foot h-[385px] sm:h-auto bg-[#4A508E] text-white">
+      <div className="flex w-full justify-around sm:flex-col">
         <div className="one w-1/3 ">
-          <h1 className=" text-center text-4xl font-bold font-monoton mt-40">
+          <h1 className=" text-center text-4xl font-bold font-monoton mt-40 sm:ml-[60%]">
             CREATENARY
           </h1>
         </div>
-        <div className="two w-1/3">
+        <div className="two w-1/3 sm:ml-[-10%]">
           <ul className="ml-60 mt-10 text-nowrap">
             <li className="mt-3">Navigation</li>
             <li className="mt-3">About Createnary</li>
@@ -27,7 +21,7 @@ const Footer = () => {
             <li className="mt-3">Privacy & Policy</li>
           </ul>
         </div>
-        <div className="three w-1/3 ml-60 mt-10 flex flex-col items-start gap-2">
+        <div className="three w-1/3 ml-60 mt-10 flex flex-col items-start gap-2 sm:ml-[41%]">
           <p>Contact</p>
           <div className="flex justify-center items-center gap-1">
             <CiLocationOn />
@@ -40,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[0.75px] bg-white mt-16"></div>
+      <div className="w-full h-[0.75px] bg-white mt-16 "></div>
       <p className="text-center font-thin text-sm mt-2">© Createnary 2024</p>
     </div>
   );

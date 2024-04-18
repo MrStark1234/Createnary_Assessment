@@ -29,7 +29,10 @@ const RangeSlide = () => {
       <div className="w-[60%] h-auto mt-10">
         <label for="influencer">What kind of influencer you are?</label>
         <br />
-        <select id="influencer" className="w-96 h-8 border-2 rounded-md mt-4">
+        <select
+          id="influencer"
+          className="w-96 sm:w-full h-8 border-2 rounded-md mt-4"
+        >
           <option value="1">Select influencer type ?</option>
           <option value="2">Option2</option>
           <option value="3">Option3</option>
@@ -37,7 +40,7 @@ const RangeSlide = () => {
         </select>
         <p className="mt-4">How many followers do you have?</p>
 
-        <div className="flex justify-between mt-4 items-center">
+        <div className="flex justify-between mt-4 items-center sm:gap-[50px]">
           <RangeSlider
             className="w-[50%] "
             size="lg"
@@ -55,7 +58,7 @@ const RangeSlide = () => {
           </p>
         </div>
         <p className="mt-20">How many products do you list monthly?</p>
-        <div className="flex justify-between mt-4 items-center">
+        <div className="flex justify-between mt-4 items-center sm:gap-[50px]">
           <RangeSlider
             className="w-[50%]"
             size="lg"

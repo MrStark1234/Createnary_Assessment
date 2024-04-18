@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const Page2Content = () => {
   return (
-    <div className="w-full h-[1925px] bg-[#f8f9fb] text-black">
-      <div className="main flex justify-center">
-        <div className="left w-[45%] h-[1925px]l ">
+    <div className="w-full h-auto bg-[#f8f9fb] text-black sm:h-auto">
+      <div className="main flex justify-center sm:flex-col">
+        <div className="left w-[45%] h-auto sm:w-auto sm:mt-[50px] sm:h-auto ">
           <div className="m-[60px] p-[20px] mt-[200px]">
             <h1 className="text-3xl font-semibold">
               GetSetYo handholds you at every step of the way
@@ -23,10 +23,11 @@ const Page2Content = () => {
             </Link>
           </div>
         </div>
-        <div className="right w-[55%] h-[1925px] ">
+        <div className="right w-[55%] h-auto sm:w-auto ">
           <RightCont number="1" />
           <RightCont number="2" />
           <RightCont number="3" />
+          <RightCont number="4" />
         </div>
       </div>
     </div>

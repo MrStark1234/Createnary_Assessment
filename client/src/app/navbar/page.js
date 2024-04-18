@@ -9,13 +9,13 @@ import { IoIosArrowDown } from "react-icons/io";
 const Navbar = () => {
   return (
     <nav
-      className="text-black fixed w-[1024px] top-4 left-[208px] z-20  rounded-full "
+      className="text-black fixed w-[1024px] top-4 left-[208px] z-20  rounded-full  sm:w-[90%] sm:ml-[-38%]"
       style={{
         backgroundColor: "rgb(214 214 214 / 43%)",
         padding: "20px 24px 20px 24px",
       }}
     >
-      <div className="container mx-auto flex justify-evenly items-center gap-50">
+      <div className="container mx-auto flex justify-evenly items-center gap-50 sm:flex-col">
         <a href="/" className="ml-6 text-lg text-black font-bold ">
           Createnary
         </a>

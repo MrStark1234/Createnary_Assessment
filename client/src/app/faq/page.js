@@ -9,7 +9,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Faq = () => {
   return (
-    <div className="w-full h-[700px] bg-[#f8f9fb] text-black">
+    <div className="w-full h-[700px] bg-[#f8f9fb] text-black sm:h-auto">
       <h1 className="text-center py-4 text-2xl font-semibold">
         {" "}
         FREQUENTLY ASKED QUESTIONS
