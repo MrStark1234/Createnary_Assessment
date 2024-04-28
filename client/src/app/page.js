@@ -7,7 +7,7 @@ import RangeSlide from "./range/page";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden overflow-auto">
       <Landing />
       <Carousel />
       <RangeSlide />

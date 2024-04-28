@@ -1,114 +1,123 @@
 "use client";
 import React, { useState } from "react";
-import RangeSlider from "react-bootstrap-range-slider";
 
 import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
 import "./range.css";
 
 const RangeSlide = () => {
-  const [productsSold, setProductsSold] = useState(0);
+  const [products, setProduct] = useState(0);
+  const [followers, setFollowers] = useState(0);
+  const [earning, setEarning] = useState(0);
+  const [yearning, setYearning] = useState(0);
+
+  const handleProduct = (event) => {
+    setProduct(parseInt(event.target.value));
+  };
+  const handleFollower = (event) => {
+    setFollowers(parseInt(event.target.value));
+  };
+
+  const productScroll = (event) => {
+    if (event.deltaY > 0) {
+      setProduct((prevValue) => Math.max(prevValue - 1, 0));
+    } else {
+      setProduct((prevValue) => Math.min(prevValue + 1, 10));
+    }
+  };
+  const followerScroll = (event) => {
+    if (event.deltaY > 0) {
+      setFollowers((prevValue) => Math.max(prevValue - 10, 0));
+    } else {
+      setFollowers((prevValue) => Math.min(prevValue + 10, 100));
+    }
+  };
 
   const calculateEarnings = () => {
-    const earning = (followers / 10000) * productsSold * 1000;
-
-    return earning;
+    const earning = (followers / 10000) * products * 1000000;
+    const yearning = earning * 12;
+    setEarning(earning);
+    setYearning(yearning);
   };
-  const calculateYearly = () => {
-    const yearning = (followers / 10000) * (productsSold * 1000) * 12;
-
-    return yearning;
-  };
-
-  const [followers, setFollowers] = useState(0);
 
   return (
-    <div className="w-full h-[700px] bg-[#f8f9fb] text-black flex justify-center items-center flex-col">
-      <h1 className="text-center font-semibold text-2xl">
+    <div className="sm:px-[16px] xsm:px-[16px] md:px-[40px] lg:px-[70px] xl:px-[120px]">
+      <h1 className="font-semibold md:text-center text-[18px] md:text-[22px] pt-4 md:pt-[70px]">
         ESTIMATE EARNING POTENTIAL
       </h1>
-      <div className="w-[60%] h-auto mt-10">
-        <label for="influencer">What kind of influencer you are?</label>
-        <br />
-        <select
-          id="influencer"
-          className="w-96 sm:w-full h-8 border-2 rounded-md mt-4"
+      <div className=" flex md:flex-row  flex-col md:gap-[100px] mt-4 md:mt-[50px]">
+        <div className="flex-1">
+          <h3 className="pb-[15px]">What Kind of Influencer you are ?</h3>
+          <select className="border-gray-400 bg-white px-[10px] border w-full  rounded-md py-[5px]">
+            <option className="text-gray-400" disabled selected>
+              Select Influencer Type?
+            </option>
+            <option value="micro">Micro Influencer</option>
+            <option value="macro">Macro Influencer</option>
+            <option value="celebrity">Celebrity Influencer</option>
+            <option value="expert">Industry Expert</option>
+            <option value="ambasador">Brand Ambasador</option>
+            <option value="creator">Content Creater</option>
+            <option value="social">Social Media Influencer</option>
+          </select>
+          <h3 className="py-[15px]">How many followers do you have? </h3>
+          <div onWheel={followerScroll}>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              step={10}
+              onChange={handleFollower}
+              className="border-gray-400 [-webkit-slider-runnable-track ]  accent-[#4a508e]  bg-[#4a508e] thumb-blue-500 px-2 border w-full rounded-md py-1"
+              value={followers}
+            />
+          </div>
+          <div className=" mx-auto w-fit rounded-lg px-2 py-1 border-[#4a508e] border-b-2">
+            <p>{followers} K</p>
+          </div>
+
+          <h3 className="py-[15px]"> How many products do you list monthly?</h3>
+          <div onWheel={productScroll}>
+            <input
+              type="range"
+              min={0}
+              max={10}
+              step={1}
+              value={products}
+              onChange={handleProduct}
+              className="border-gray-400 [-webkit-slider-runnable-track ] accent-[#4a508e]  px-2 border w-full rounded-md py-1 bg-[#4a508e] "
+            />
+          </div>
+          <div className=" mx-auto w-fit rounded-lg px-2 py-1 border-[#4a508e] border-b-2">
+            <p>{products}</p>
+          </div>
+        </div>
+        <button
+          onClick={calculateEarnings}
+          className="text-[14px]  md:hidden mx-auto block   bg-[#4a508e] px-[15px] py-[8px] rounded-xl text-white  font-semibold mt-[20px] animate-slide-in hover:scale-110 transition-all"
         >
-          <option value="1">Select influencer type ?</option>
-          <option value="2">Option2</option>
-          <option value="3">Option3</option>
-          <option value="4">Option4</option>
-        </select>
-        <p className="mt-4">How many followers do you have?</p>
-
-        <div className="flex justify-between mt-4 items-center sm:gap-[50px]">
-          <RangeSlider
-            className="w-[50%] "
-            size="lg"
-            variant="dark"
-            max={20000}
-            value={followers}
-            onChange={(changeEvent) => setFollowers(changeEvent.target.value)}
-          />
-          <p className="text-xl font-semibold">
-            Monthly Earnings: <br />{" "}
-            <span className="text-[#4A508E] font-semibold text-2xl">
-              {" "}
-              ₹ {calculateEarnings()}
-            </span>
-          </p>
+          Calculate
+        </button>
+        <div className="w-[350px]  gap-4 md:gap-0 md:mt-0 mt-[30px] md:flex-col flex-row flex mx-auto justify-center items-center text-start  ">
+          <div>
+            <h1 className="font-medium md:mt-[100px]">Monthly Earning</h1>
+            <div className="text-[#4a508e] font-semibold text-[30px] text-center">
+              ₹ {earning.toLocaleString("en-IN")}
+            </div>
+          </div>
+          <div>
+            <h1 className="font-medium md:mt-[20px]">Yearly Earning</h1>
+            <div className="text-[#4a508e] font-semibold text-[30px] text-center">
+              ₹ {yearning.toLocaleString("en-IN")}
+            </div>
+          </div>
         </div>
-        <p className="mt-20">How many products do you list monthly?</p>
-        <div className="flex justify-between mt-4 items-center sm:gap-[50px]">
-          <RangeSlider
-            className="w-[50%]"
-            size="lg"
-            variant="dark"
-            max={100}
-            value={productsSold}
-            onChange={(changeEvent) =>
-              setProductsSold(changeEvent.target.value)
-            }
-          />
-          <p className="text-xl font-semibold mr-4">
-            Yearly Earnings: <br />{" "}
-            <span className="text-[#4A508E] font-semibold text-2xl">
-              {" "}
-              ₹ {calculateYearly()}
-            </span>
-          </p>
-        </div>
-        <div className="flex justify-center mt-16">
-          <button className="rounded-lg px-4 py-3 mt-10 text-white bg-[#4A508E] text-sm">
-            Calculate
-          </button>
-        </div>
-
-        {/* <div>
-          <label htmlFor="followers"> {followers}</label>
-          <input
-            type="range"
-            id="followers"
-            min="0"
-            max="20000"
-            value={followers}
-            onChange={(e) => setFollowers(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="productsSold">Products Sold: {productsSold}</label>
-          <input
-            type="range"
-            id="productsSold"
-            min="0"
-            max="100"
-            value={productsSold}
-            onChange={(e) => setProductsSold(e.target.value)}
-          />
-        </div> */}
-        {/* <div>
-         
-        </div> */}
       </div>
+      <button
+        onClick={calculateEarnings}
+        className="text-[14px] mx-auto  md:block hidden  bg-[#4a508e] px-[15px] py-[8px] rounded-xl text-white  font-semibold mt-[50px] animate-slide-in hover:scale-110 transition-all"
+      >
+        Calculate
+      </button>
     </div>
   );
 };

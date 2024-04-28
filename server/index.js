@@ -21,7 +21,7 @@ mongoose
   .connect(process.env.MongoUrl, {})
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
-
+// -----------------------Carousel Data Schema--------------------
 const dataSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -43,6 +43,33 @@ app.get("/data", async (req, res) => {
   try {
     const data = await Data.find();
     res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// -----------------------FAQ Data Schema--------------------
+const faqSchema = new mongoose.Schema({
+  question: String,
+  answer: String,
+});
+const Faq = mongoose.model("Faq", faqSchema);
+
+app.post("/faq", async (req, res) => {
+  try {
+    const { question, answer } = req.body;
+    const faq = new Faq({ question, answer });
+    await faq.save();
+    res.status(201).json(faq);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get("/faq", async (req, res) => {
+  try {
+    const faq = await Faq.find();
+    res.json(faq);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

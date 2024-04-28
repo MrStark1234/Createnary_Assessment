@@ -7,8 +7,11 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: { max: "480px" },
-      lg: "1024px",
+      xsm: "340px",
+      sm: "480px",
+      md: "768px",
+      lg: "992px",
+      xl: "1200px",
     },
     extend: {
       backgroundImage: {

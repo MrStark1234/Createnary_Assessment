@@ -5,11 +5,15 @@ import Page2Content from "../page2Content/page";
 
 const page = () => {
   return (
-    <div>
-      <Navbar />
-      <Page2Content />
-      <Footer />
-    </div>
+    <>
+      <div className="bg-[#f8fafb] sm:px-[16px] xsm:px-[16px] md:px-[40px] lg:px-[70px] xl:px-[120px]  text-black">
+        <Navbar />
+        <Page2Content />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

@@ -3,39 +3,39 @@ import { FiPhone } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <div className="foot h-[385px] sm:h-auto bg-[#4A508E] text-white">
-      <div className="flex w-full justify-around sm:flex-col">
-        <div className="one w-1/3 ">
-          <h1 className=" text-center text-4xl font-bold font-monoton mt-40 sm:ml-[60%]">
-            CREATENARY
-          </h1>
-        </div>
-        <div className="two w-1/3 sm:ml-[-21%]">
-          <ul className="ml-60 mt-10 text-nowrap">
-            <li className="mt-3">Navigation</li>
-            <li className="mt-3">About Createnary</li>
-            <li className="mt-3">Contact US</li>
-            <li className="mt-3">Refund</li>
-            <li className="mt-3">Newsletter</li>
-            <li className="mt-3">Terms & Conditions</li>
-            <li className="mt-3">Privacy & Policy</li>
-          </ul>
-        </div>
-        <div className="three w-1/3 ml-60 mt-10 flex flex-col items-start gap-2 sm:ml-[41%]">
-          <p>Contact</p>
-          <div className="flex justify-center items-center gap-1">
-            <CiLocationOn />
-            <p className="font-thin ml-2">Delhi , India</p>
+    <div className=" bg-[#4a508e]">
+      <div className="w-[100%] sm:px-[16px] xsm:px-[16px] md:px-[40px] lg:px-[70px] xl:px-[120px] flex text-white py-10 md:flex-row  flex-col ">
+        <div className=" flex flex-1 items-center text-[32px] ">Createnary</div>
+        <div className="flex-1 ">
+          <div className=" md:mt-0 mt-6">
+            <ul>
+              <li>Navigation</li>
+              <li>About Createnary</li>
+              <li>Contact Us</li>
+              <li>Refund</li>
+              <li>NewsLetter</li>
+              <li>Terems & Conditions</li>
+              <li>Privacy & Policy</li>
+            </ul>
           </div>
-          <p className="font-thin ml-5 sm:text-nowrap">+91 98765 43210</p>
-          <div className="flex justify-center items-center gap-1">
+        </div>
+        <div className="mt-9 md:mt-0">
+          <h1 className="text-[18px] mb-4 ">Contacts</h1>
+          <div className="flex-row  flex items-center gap-1 text-[16px]">
+            <CiLocationOn />
+
+            <h2>Delhi, India</h2>
+          </div>
+          <h1 className="ml-[20px]">+91 98765 43210</h1>
+          <div className="flex-row  flex items-center gap-1">
             <FiPhone />
-            <p className="font-thin sm:text-nowrap">+91 99999 99999</p>
+            <h2>+91 99999 99999</h2>
           </div>
         </div>
       </div>
-      <div className="w-full h-[0.75px] bg-white mt-16 "></div>
-      <p className="text-center font-thin text-sm mt-2">© Createnary 2024</p>
+      <div className="w-full border-t-2 text-white pb-4 pt-[10px] text-center">
+        © Createnary 2024
+      </div>
     </div>
   );
 };

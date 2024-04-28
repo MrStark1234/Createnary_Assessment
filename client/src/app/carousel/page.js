@@ -1,16 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./styles.css";
 
-import { EffectFlip, Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
+
 import Image from "next/image";
 
 const Carousel = () => {
@@ -36,50 +36,41 @@ const Carousel = () => {
     }
   };
   return (
-    <div>
-      <div className="w-full h-[724px] bg-[#4A508E] sm:h-auto">
+    <div className="w-[100%]  bg-[#4a508e]  sm:px-[16px] xsm:px-[16px] md:px-[40px] lg:px-[70px] xl:px-[120px]  -mt-[100px]   md:mt-0 h-full carousel ">
+      <div className="sm:mt-[100px] xsm:mt-[100px] md:mt-0 lg:mt-0">
         {data.map((item, index) => (
           <div key={index}>
-            <h1 className="text-center py-8 font-semibold text-4xl">
+            <h1 className="md:text-[35px]  text-[25px] font-semibold  text-white text-center pt-[25px]">
               {item.title}
             </h1>
-            <p className="text-center font-light">{item.description}</p>
+            <p className=" text-white text-center pt-[5px] ">
+              {item.description}
+            </p>
           </div>
         ))}
 
         <Swiper
-          effect={"flip"}
+          slidesPerView={1}
+          spaceBetween={30}
           loop={true}
-          grabCursor={true}
           navigation={true}
-          modules={[EffectFlip, Pagination, Navigation]}
-          className="mySwiper sm:w-full w-[800px]"
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
         >
           <SwiperSlide>
             <Image src="/assets/crsl.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src="/assets/crsl.png" width={500} height={300} />
+            <Image src="/assets/image.png" width={500} height={300} />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src="/assets/crsl.png" width={500} height={300} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src="/assets/crsl.png" width={500} height={300} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src="/assets/crsl.png" width={500} height={300} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src="/assets/crsl.png" width={500} height={300} />
+            <Image src="/assets/two.png" width={500} height={300} />
           </SwiperSlide>
         </Swiper>
-        <div className="flex justify-center items-center">
-          <Link href="/page2" className="sm:mb-[40px]">
-            <button className="bg-[#f8f9fb] rounded-lg px-2 py-2 text-black mt-20">
-              Try for free
-            </button>
-          </Link>
+        <div className="md:pb-[20px] sm:pb-[10px] xsm:pb-[10px]">
+          <button className="text-[14px]    font-semibold bg-white p-[10px] rounded-xl mx-auto block mt-7 animate-slide-in hover:scale-110 transition-all">
+            Try for free
+          </button>
         </div>
       </div>
     </div>

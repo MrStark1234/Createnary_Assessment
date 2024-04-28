@@ -5,56 +5,41 @@ import Link from "next/link";
 const Landing = () => {
   return (
     <div className="main">
-      <Navbar />
-      <img
-        className="h-full w-full absolute  sm:h-[115%]"
-        src="/assets/background.png"
-        alt="img"
-      />
-      <div className="relative flex items-center justify-center">
-        <div className="left w-1/2 text-black sm:mt-[220px] sm:mb-[220px] sm:ml-[12%] ml-[8%] mt-[5%] sm:w-auto sm:text-center">
-          <h1 style={{ fontSize: "xxx-large", fontWeight: "600" }}>
-            Welcome To India’s First
-          </h1>
-          <h1
-            className="text-[#4A508E] sm:text-[#34396c]"
-            style={{
-              fontSize: "xxx-large",
-              fontWeight: "600",
-            }}
-          >
-            Creator’s Marketplace
-          </h1>
-
-          <h4
-            style={{
-              fontWeight: "800",
-              margin: "20px 0px 20px 0px",
-            }}
-          >
-            Create your first E-Store @ Zero Cost
-          </h4>
-          <p>
-            Empower your creativity with Createnary. Showcase, sell, and connect
-            with a global audience effortlessly, turn your products into
-            profits.
-          </p>
-          <Link href="/page2">
-            <button className="rounded-lg px-4 py-3 mt-10 text-white bg-[#4A508E] text-sm">
-              Get Started
-            </button>
-          </Link>
+      <div
+        className="w-[100%] md:h-auto h-auto bg-cover bg-opacity-0"
+        style={{ backgroundImage: "url('/assets/background.png')" }}
+      >
+        <div className="pt-4">
+          <Navbar />
         </div>
-
-        <div
-          className="right w-1/2 "
-          style={{ marginRight: "8%", marginTop: "7%" }}
-        >
-          <img
-            src="/assets/hero.png"
-            alt="img"
-            className="sm:absolute sm:w-[60%] sm:bottom-[-4%] sm:right-[20%]"
-          />
+        <div className="flex  gap-10 flex-col items-center justify-between w-screen md:flex-row   sm:px-[16px] md:px-[40px] lg:px-[70px] xl:px-[120px] ">
+          <div className="font-bold text-[20px] lg:text-[40px]   md:text-[20px] text-black ">
+            <h1>Welcome To India's First </h1>
+            <h1 className="text-[#4a508e]">Creater's Marketplace</h1>
+            <h2 className="text-[12px] md:text-[18px] lg:text-[22px] md:mt-[44px] ">
+              Create your first E-Store @ Zero Cost
+            </h2>
+            <p className="text-[18px]  hidden md:block font-normal mt-[28px] w-full ">
+              Empower your creativity with Createnary. Showcase, sell, and
+              connect with a global audience effortlessly, turn your products
+              into profits.
+            </p>
+            <Link href="/page2">
+              <button className="text-[14px] bg-[#4a508e] p-[10px] rounded-xl text-white mx-auto md:mx-0 block font-normal mt-[20px] mb-[20px] animate-slide-in hover:scale-110 transition-all">
+                Get Started
+              </button>
+            </Link>
+          </div>
+          <div className="flex-grow sm:w-[450px] md:w-full ">
+            <img
+              loading="lazy"
+              decoding="async"
+              data-ming="1"
+              className="w-auto h-full object-cover"
+              src="/assets/hero.png"
+              style={{ color: "transparent" }}
+            />
+          </div>
         </div>
       </div>
     </div>

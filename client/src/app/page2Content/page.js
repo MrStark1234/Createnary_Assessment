@@ -5,30 +5,31 @@ import Link from "next/link";
 
 const Page2Content = () => {
   return (
-    <div className="w-full h-auto bg-[#f8f9fb] text-black sm:h-auto">
-      <div className="main flex justify-center sm:flex-col">
-        <div className="left w-[45%] h-auto sm:w-auto sm:mt-[50px] sm:h-auto ">
-          <div className="m-[60px] p-[20px] mt-[200px]">
-            <h1 className="text-3xl font-semibold">
-              GetSetYo handholds you at every step of the way
-            </h1>
-            <p className="font-light mt-4">
-              You focus on helping your friends and family, we take care of
-              everything else.
-            </p>
-            <Link href="/">
-              <button className="rounded-lg px-4 py-3 mt-10 text-white bg-[#4A508E] text-sm">
-                Get Started
-              </button>
-            </Link>
-          </div>
+    <div className="  h-[100%] w-full flex md:flex-row flex-col p-4 ">
+      <div className=" flex-1  h-full  flex  items-center  ">
+        <div className="font-bold text-[20px] md:ml-auto mr-14   mt-[50px] md:w-[48%]    ">
+          <h1 className="md:hidden text-[16px] mb-3">HOW IT WORKS</h1>
+
+          <h2 className="text-[18px]  ">
+            GetSetYo handholds you at every step of the way
+          </h2>
+          <p className="text-[14px]   font-normal mt-[28px] ">
+            You focus on helping your friends and family, we take care of
+            everything else.
+          </p>
+          <Link href="/">
+            <button className="text-[14px] bg-[#4a508e] p-[10px] rounded-xl text-white   block font-normal mt-[20px] mb-[20px] animate-slide-in hover:scale-110 transition-all">
+              Get Started
+            </button>
+          </Link>
         </div>
-        <div className="right w-[55%] h-auto sm:w-auto ">
-          <RightCont number="1" />
-          <RightCont number="2" />
-          <RightCont number="3" />
-          <RightCont number="4" />
-        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col h-full border-l-2 gap-10 border-[#d6d6d6]  ml-5">
+        <RightCont number="1" />
+        <RightCont number="2" />
+        <RightCont number="3" />
+        <RightCont number="4" />
       </div>
     </div>
   );
