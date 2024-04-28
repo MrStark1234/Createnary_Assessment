@@ -18,8 +18,8 @@ const Faq = () => {
   const fetchFaq = async () => {
     try {
       const response = await fetch(
-        //  "https://createnary-server.onrender.com/faq"
-        "http://localhost:8000/faq"
+        "https://createnary-server.onrender.com/faq"
+        // "http://localhost:8000/faq"
       );
       if (!response.ok) {
         throw new Error("Failed to fetch faq");
